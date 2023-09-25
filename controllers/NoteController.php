@@ -8,10 +8,25 @@ class NoteController{
 
     public function myNotes(){
         Helpers::isUser(); 
+        $id_user = $_SESSION['user']->id; 
         $note = new NoteModel; 
-        $notas = $note->getAllNotes();
+        $note->setUser_id($id_user); 
+        $notas = $note->getAllNotesById();
         require_once "./views/note/myNotes.php";
     }
+
+    public function delete(){
+        Helpers::isUser(); 
+        if(isset($_GET['id'])){
+            $note_id = $_GET['id']; 
+            $note = new NoteModel; 
+            $note->setId($note_id); 
+            $note->deleteNote(); 
+        }
+
+        header("Location: ".base_url."Note/myNotes"); 
+    }
+      
 
 
     public function saveNotes(){

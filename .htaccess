@@ -1,0 +1,6 @@
+RewriteEngine On
+Options All -indexes
+ErrorDocument 404 http://localhost/project_notas/Error/index
+RewriteCond   %{REQUEST_FILENAME} !-f
+RewriteCond   %{REQUEST_FILENAME} !-d
+RewriteRule   ^(.*)$ index.php?url=$1 [QSA,L]
