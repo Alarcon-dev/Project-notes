@@ -26,6 +26,15 @@ class NoteController{
 
         header("Location: ".base_url."Note/myNotes"); 
     }
+
+    public function gestion(){
+        require_once "./views/note/gestion.php"; 
+    }
+
+
+    public function getNoteByCAtegoryId(){
+        
+    }
       
 
 
