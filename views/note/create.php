@@ -1,5 +1,12 @@
 <div class="create_note">
-    <h2>Crea una nota</h2>
+    <?php if(isset($_GET['id'])):?>
+        <h2>Edita tu nota</h2>
+                <?php $id_note = $_GET['id']?>
+                <?php $url = base_url."Note/saveNotes?id=".$id_note ?>
+            <?php else: ?>
+        <h2>Crea una nota</h2>
+            <?php $url = base_url."Note/saveNotes" ?>
+    <?php endif?>
 
     <?php if (isset($_SESSION['succes'])) : ?>
             <div class="verde">
@@ -16,7 +23,7 @@
         <?php Helpers::unsetSession("error") ?>
     <?php endif; ?>
 
-    <form action="<?=base_url?>Note/saveNotes" method="post">
+    <form action="<?=$url?>" method="post">
         <label for="categoria">Categoría</label>
         <?php $categories = Helpers::showAllCategories()?>
 

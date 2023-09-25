@@ -46,4 +46,12 @@ class Helpers{
 
     }
 
+public static function getNotasById($id_note , $id_user){
+    $sql = "SELECT * FROM notes WHERE id = '$id_note'"; 
+
+    $query = DatabaseConect::Conect()->query($sql); 
+
+    return $query->fetch_object(); 
+}
+
 }

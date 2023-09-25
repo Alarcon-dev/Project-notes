@@ -10,7 +10,7 @@
                             <?=$not->descripcion?>
                         </p>
                         <div class="options-notes">
-                            <a class="option1" href="">Editar</a>
+                            <a class="option1" href="<?=base_url?>Note/createNote?id=<?=$not->id?>">Editar</a>
                             <a class="option2" href="<?=base_url?>Note/delete?id=<?=$not->id?>">Eiminar</a>
                         </div>
                 </article>
