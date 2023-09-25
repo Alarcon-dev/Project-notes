@@ -46,7 +46,7 @@ class Helpers{
 
     }
 
-public static function getNotasById($id_note , $id_user){
+public static function getNotasById($id_note){
     $sql = "SELECT * FROM notes WHERE id = '$id_note'"; 
 
     $query = DatabaseConect::Conect()->query($sql); 

@@ -97,10 +97,11 @@ class NoteModel{
     }
 
     public function updateNote(){
-        $sql = "UPDATE notes SET category_id = {$this->getCategory_id()} , titulo = {$this->getTitulo()} , descripcion = {$this->getDescripcion()}"
+        $sql = "UPDATE notes SET category_id = {$this->getCategory_id()} , titulo = '{$this->getTitulo()}' , descripcion = '{$this->getDescripcion()}'"
               . " WHERE id = {$this->getId()}"; 
-
+       
         $query = $this->db->query($sql); 
+        
 
         return $query; 
     }

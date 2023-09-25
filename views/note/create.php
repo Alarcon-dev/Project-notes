@@ -26,18 +26,22 @@
     <form action="<?=$url?>" method="post">
         <label for="categoria">Categoría</label>
         <?php $categories = Helpers::showAllCategories()?>
-
         <select name="categoria" id="">
+             <?php  $not = Helpers::getNotasById($id_note);  ?>
             <?php while($cat = $categories->fetch_object()): ?>
-            <option value="<?=$cat->id?>"><?=$cat->nombre?></option>
+            <option value="<?=$cat->id?>" <?=isset($not) && is_object($not) && $not->category_id == $cat->id ? "selected" : ''?>><?=$cat->nombre?></option>
             <?php endwhile; ?>
         </select>
         <label for="titulo">Título: </label>
-        <input type="text" name="titulo">
+        <input type="text" name="titulo" value="<?=isset($not) && is_object($not) ? $not->titulo : ''?>">
 
         <label for="decripcion">Decripcion</label>
-        <textarea name="descripcion"></textarea>
+        <textarea name="descripcion"><?=isset($not) && is_object($not) ? $not->descripcion : ''?></textarea>
 
-        <input type="submit" value="Crear">
+        <?php if(isset($_GET['id'])): ?>
+               <input type="submit" value="Editar">
+           <?php else: ?> 
+                <input type="submit" value="Crear">
+        <?php endif?>
     </form>
 </div>

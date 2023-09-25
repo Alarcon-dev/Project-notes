@@ -46,9 +46,19 @@ class NoteController{
                 $note->setTitulo($titulo); 
                 $note->setDescripcion($descripcion); 
                 
-                if(isset($_get['id'])){
+                if(isset($_GET['id'])){
+                    $note_id = $_GET['id']; 
+                    $note->setId($note_id); 
+                    $update = $note->updateNote(); 
+
+                    if($update){
+                        $_SESSION['succes'] = "Nota editada"; 
+                    }else{
+                        $_SESSION['error'] = "Error al editar nota"; 
+                    }
 
                 }else{
+
                     $save = $note->saveNote(); 
 
                     if($save){
