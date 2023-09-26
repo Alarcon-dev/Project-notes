@@ -6,4 +6,4 @@
                     <a href="<?=base_url?>Note/getNoteByCAtegoryId?id<?=$cat->id?>"><?=$cat->nombre?></a>
                 <?php endwhile; ?>
         </section>
-</div>
+</div>          
