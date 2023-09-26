@@ -559,12 +559,17 @@ input[type="password"]{
     color: azure;
 }
 
-
+.note-gestion{
+    width: 65%;
+    min-height: 350px;
+}
 .footer{
     width: 100%;
     background-color: #3C0442;
     height: 40px;
 }
+
+
 
 
 
