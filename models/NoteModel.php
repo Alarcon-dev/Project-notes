@@ -81,6 +81,14 @@ class NoteModel{
     }
 
     public function showNoteByCategory(){
+
+        $sql = "SELECT * FROM notes WHERE category_id = {$this->getCategory_id()} ORDER BY id DESC"; 
+
+        $query = $this->db->query($sql); 
+
+        
+
+        return $query; 
         
     }
 
@@ -89,6 +97,7 @@ class NoteModel{
        
         $query = $this->db->query($sql); 
 
+        
         return $query; 
     }
 

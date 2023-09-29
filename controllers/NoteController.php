@@ -33,7 +33,17 @@ class NoteController{
 
 
     public function getNoteByCAtegoryId(){
+        Helpers::isUser(); 
+        if(isset($_GET['id'])){
+            $id_category = $_GET['id']; 
+            $note = new NoteModel;
+            $note->setCategory_id($id_category); 
+            $notas = $note->showNoteByCategory();  
+        }
+
         
+
+        require_once "./views/note/notesByCategory.php"; 
     }
       
 
