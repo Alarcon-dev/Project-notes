@@ -559,7 +559,13 @@ input[type="password"]{
     color: azure;
 }
 
+.note-gestion{
+    width: 65%;
+    min-height: 350px;
+    margin: 5px auto; 
+}
 
+<<<<<<< HEAD
 .note-gestion{
     width: 70%;
     min-height: 400px;
@@ -591,11 +597,20 @@ input[type="password"]{
 }
 
 
+=======
+.note-gestion h2{
+    font-family: "oswald";
+    text-align: center;
+}
+>>>>>>> 42f9faa4c6ec79ded251ce9d4e4a4ecac4f64a85
 .footer{
     width: 100%;
     background-color: #3C0442;
     height: 40px;
+    margin: 5px auto; 
 }
+
+
 
 
 

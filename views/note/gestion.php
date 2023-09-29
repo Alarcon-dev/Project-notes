@@ -10,4 +10,4 @@
                 <h2>NO hay categorias Categorias en la lista</h2>
             <?php endif ?>
         </section>
-</div>
+</div>          
