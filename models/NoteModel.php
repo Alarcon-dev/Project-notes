@@ -80,6 +80,10 @@ class NoteModel{
         return $this;
     }
 
+    public function showNoteByCategory(){
+        
+    }
+
     public function getAllNotesById(){
         $sql = "SELECT * FROM notes WHERE user_id_notes = {$this->getUser_id()} ORDER BY id DESC"; 
        
